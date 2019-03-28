@@ -21,8 +21,33 @@ public class ShellSort implements Sort {
      * {@inheritDoc}
      */
     public void sort(int[] array) {
+        int temp;
+        int h = 0; //  interval 
+        
+        while (h <= array.length/3) // находим нач.значение интервала!! 
+            h = 3*h +1;
+        for (int k = h; k > 0; k = (k-1)/3)         //на каждой итерации велю интрвала уменьшается 
+            for (int i = k; i < array.length; i++){
+                temp = array[i];
+                int j;
+                for ( j = i; j >=k; j = j-k){
+                    if (temp < array[j-k])
+                        array[j] = array [j - k];
+                    else 
+                        break;}
+                
+                array[j] = temp;
+                  
+            }
+        
+        
+        
+       
+        
+        
+        
         /*
          * TODO(Студент): Реализовать метод sort класса ShellSort
          */
-    }
+    }  
 }
