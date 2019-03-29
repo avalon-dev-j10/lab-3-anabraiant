@@ -26,7 +26,16 @@ public class FibonacciInitializer implements Initializer {
      *
      * @param array массив, подлежащий инициализации
      */
+        
+       // RandomNumber anyNumber = new RandomNumber(-10000, 10001);
+    
     public void initialize(int[] array) {
+         
+        array [0] = 0;
+        array [1] = 1;
+        for (int i = 2; i < array.length; i++){
+            array [i] = array [i-2] + array[i-1];
+        }
         /*
          * TODO(Студент): Реализовать метод initialize класса FibonacciInitializer
          */

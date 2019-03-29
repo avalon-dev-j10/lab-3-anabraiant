@@ -1,5 +1,6 @@
 package ru.avalon.java.dev.j10.labs.initialization;
 
+import java.util.Random;
 import ru.avalon.java.dev.j10.labs.Initializer;
 
 /**
@@ -14,6 +15,15 @@ import ru.avalon.java.dev.j10.labs.Initializer;
  * инициализации.
  */
 public class RandomInitializer implements Initializer {
+    
+    private int a;
+    private int b;
+    
+    public RandomInitializer (int a, int b){
+        this.a = a;
+        this.b = b;
+    }
+    
 
     /**
      * Выполняет инициализацию массива, значениями
@@ -21,7 +31,13 @@ public class RandomInitializer implements Initializer {
      *
      * @param array массив, подлежащий инициализации
      */
+     
+    // scopes from A to B (but B doesnt include)
     public void initialize(int[] array) {
+        for (int i = 0; i < array.length; i++){
+            array[i] = (int) (a + Math.random() * (b-a));
+        }
+        
         /*
          * TODO(Студент): Реализовать метод initialize класса RandomInitializer
          */
